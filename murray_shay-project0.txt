@@ -1,0 +1,43 @@
+Michael Murray & Peter Shay
+Project Proposal
+
+Domain
+My project will be to create a database that contains movies, their ratings, directors, notable actors, production company, etc.
+
+Movies can be organized by a certain director , actor, production company, genre, ratings, year released, budget etc.
+Every movie contains at least one director, actor, production company.
+
+Motivation
+This database will be useful to anyone that avidly watches movies. If the user is fond of a certain actor,
+they could find other movies they were in. Similarly, the user could find more movies from a certain director they may not have known about.
+Users will access the database through a website. Users can search by actor, by director, by movie title, etc.
+
+This system may not be necessarily better than certain movie websites such as Rotten Tomatoes, IMDb,
+but the benefit to this system is that ratings will be pulled from a variety of sources instead of the aforementioned websites' own.
+The rating could be specified between audience and critic ratings.
+Considering there will be no popularity variable, it will be more likely for a user to find lesser known 'hidden gems.'
+The proposed database might not be as good or better than existing movie databases, but aims to be able to pull
+a bunch of different information about movies. This will be useful as time goes on, movies can be added as they come out, or
+older movies that weren't though of could be added as well.
+
+Data Needs
+What is the name of the <director> directing <movie>?
+What is the name of the <production company> producing <movie>?
+What rating did <specific movie> earn on <specific source>?
+What is the name of <director>'s highest rated movie?
+How many movies has <director> directed?
+How many movies has <actor> starred in?
+How many <genre> movies were made in <year>?
+Which <actors> are in <movie>?
+How many movies were produced by <production company>?
+How many movies has <actor> been in with <director>?
+
+What is the name of the highest rated movie from <production company>?
+What is the name of the <production company> with the highest rated movie?
+What <production company> does <director> work with the most?
+What is the highest <rating> of a movie made in <specific year>?
+How many movies were made in a <specific year>?
+How many movies did <specific director> make in a <specific year>?
+Which <genre> has the highest ratings?
+What movies were made under <budget>?
+What movies were above <rating> and made under <budget>?

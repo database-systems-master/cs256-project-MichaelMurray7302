@@ -1,0 +1,42 @@
+Michael Murray & Peter Shay
+Conceptual Design
+
+Entity Sets:
+Screenwriter
+  name
+  age
+  dob
+
+Director
+  name
+  age
+  dob
+
+Actor
+  name
+  age
+  dob
+
+Movie
+  title
+  release_date
+  rt_rating
+  imdb_rating
+  budget
+  box_office
+
+Production Company
+  company_name
+  year_est
+
+Distributor
+  company_name
+  year_est
+
+Relationship Sets:
+[T] Director [M] makes [M] Movie [T]
+[T] Screenwriter [M] sells script to [M] Production Company [T]
+[T] Distributor [M] releases [M] Movie [P]
+[T] Production Company [M] hires [M] Actor [P]
+[T] Production Company [M] hires [M] Director [P]
+[T] Actor [M] stars in [M] Movie [T]

@@ -3,40 +3,40 @@ Conceptual Design
 
 Entity Sets:
 Screenwriter
-  name
-  age
-  dob
+  name[C: first, last]
+  dob[C: day, month, year]
+  id*
 
 Director
-  name
-  age
-  dob
+  name[C: first, last]
+  dob[C: day, month, year]
+  id*
 
 Actor
-  name
-  age
-  dob
+  name[C: first, last]
+  dob[C: day, month, year]
+  id*
 
 Movie
-  title
-  release_date
+  name[C: title, year_released]*
+  release_date[C: day, month, year]
   rt_rating
   imdb_rating
   budget
   box_office
 
 Production Company
-  company_name
+  company_name*
   year_est
 
 Distributor
-  company_name
+  company_name*
   year_est
 
 Relationship Sets:
 [T] Director [M] makes [M] Movie [T]
 [T] Screenwriter [M] sells script to [M] Production Company [T]
-[T] Distributor [M] releases [M] Movie [P]
+[T] Distributor [1] releases [M] Movie [P]
 [T] Production Company [M] hires [M] Actor [P]
 [T] Production Company [M] hires [M] Director [P]
 [T] Actor [M] stars in [M] Movie [T]

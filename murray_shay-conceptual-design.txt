@@ -2,20 +2,21 @@ Michael Murray & Peter Shay
 Conceptual Design
 
 Entity Sets:
-Screenwriter //language
+Person
   name[C: first, last]
   dob[C: day, month, year]
   id*
 
-Director //genre, education
-  name[C: first, last]
-  dob[C: day, month, year]
-  id*
+Screenwriter {Specialization -> Person: id}     //unsure how to denote specializations
+  language
 
-Actor //height, picture
-  name[C: first, last]
-  dob[C: day, month, year]
-  id*
+Director {Specialization -> Person: id}
+  genre
+  education
+
+Actor {Specialization -> Person: id}
+  height[C: feet, inches]
+  picture
 
 Movie
   name[C: title, year_released]*

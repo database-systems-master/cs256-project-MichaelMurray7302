@@ -2,17 +2,17 @@ Michael Murray & Peter Shay
 Conceptual Design
 
 Entity Sets:
-Screenwriter
+Screenwriter //language
   name[C: first, last]
   dob[C: day, month, year]
   id*
 
-Director
+Director //genre, education
   name[C: first, last]
   dob[C: day, month, year]
   id*
 
-Actor
+Actor //height, picture
   name[C: first, last]
   dob[C: day, month, year]
   id*

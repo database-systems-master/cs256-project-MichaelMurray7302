@@ -5,6 +5,10 @@ body {
 header {
   background-color: purple;
   color: white;
+  text-align: center;
+  padding-top: 8px;
+  text-shadow: 2px 2px 4px black;
+  font-size: 25px;
 }
 
 p{

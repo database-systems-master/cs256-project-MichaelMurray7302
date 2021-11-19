@@ -8,18 +8,27 @@ director(id*, genre, education)
   director(id) refrences person
 actor(id*, feet, inches, picture)
   actor(id) refrences person
+
 movie(title*, year_released*, day, month, year, rt_rating, imdb_rating, budget, boxoffice)
+
 productionCompany(company_name*, year_est)
+
 distributor(company_name*, year_est)
+
 makes(id*, title*, year_released*)
   makes(id) refrences person, makes(title, year_released) refrences movie
+
 sellsScript(id*, company_name*)
   sellsScript(id) refrences person, sellsScript(company_name) refrences productionCompany
+
 releases(title*, year_released*, company_name)
   releases(title, year_released) refrences movie, releases(company_name) refrences distributor
+
 hiresA(company_name*, id*)
   hiresA(company_name) refrences productionCompany, hiresA(id) refrences person
+
 hiresD(company_name*, id*)
   hiresD(company_name) refrences productionCompany, hiresD(id) refrences person
+  
 starsIn(id*, title*, year_released*)
   starsIn(id) refrences person, starsIn(title, year_released) refrences movie

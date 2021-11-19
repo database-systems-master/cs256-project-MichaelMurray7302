@@ -28,7 +28,7 @@ CREATE TABLE project.directs(
   movie_title VARCHAR(100),
   release_date CHAR(10),
   FOREIGN KEY (id) REFERENCES project.person,
-  FOREIGN KEY (movie_title, release_date) REFERENCES project.movie(movie_title),
+  FOREIGN KEY (movie_title) REFERENCES project.movie(movie_title),
   FOREIGN KEY (release_date) REFERENCES project.movie(release_date)
 );
 

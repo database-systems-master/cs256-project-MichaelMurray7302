@@ -187,3 +187,9 @@ INSERT INTO project.starsIn VALUES('0022','Star Wars: Episode I - The Phantom Me
 INSERT INTO project.directs VALUES('0023','Star Wars: Episode I - The Phantom Menace', '05/19/1999');
 
 INSERT INTO project.produces VALUES('Lucasfilm Ltd. LLC', 'Star Wars: Episode I - The Phantom Menace', '05/19/1999');
+
+--SQL TEST QUERIES--
+-- SELECT * FROM project.person NATURAL JOIN project.directs;
+-- SELECT * FROM project.person NATURAL JOIN project.starsIn Natural JOIN project.movie WHERE person.name = 'Natalie Portman';
+-- SELECT * FROM project.movie;
+--SELECT * FROM project.produces NATURAL JOIN project.movie WHERE company_name = 'Marvel Entertainment' AND rt_rating >= 90;

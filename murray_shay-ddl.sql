@@ -172,9 +172,11 @@ INSERT INTO project.person VALUES('0019', '03/05/1989', 'Jake Lloyd');
 INSERT INTO project.person VALUES('0020', '08/11/1944', 'Ian McDiarmid');
 INSERT INTO project.person VALUES('0021', '02/21/1946', 'Anthony Daniel');
 INSERT INTO project.person VALUES('0022', '08/24/1934', 'Kenny Baker');
+INSERT INTO project.person VALUES('0023', '12/21/1948', 'Samuel L. Jackson');
+INSERT INTO project.person VALUES('0024', '08/23/1974', 'Ray Park');
 
 --Director
-INSERT INTO project.person VALUES('0023', '05/14/1944', 'George Lucas');
+INSERT INTO project.person VALUES('0025', '05/14/1944', 'George Lucas');
 
 INSERT INTO project.starsIn VALUES('0013','Star Wars: Episode I - The Phantom Menace', '05/19/1999');
 INSERT INTO project.starsIn VALUES('0017','Star Wars: Episode I - The Phantom Menace', '05/19/1999');
@@ -183,10 +185,56 @@ INSERT INTO project.starsIn VALUES('0019','Star Wars: Episode I - The Phantom Me
 INSERT INTO project.starsIn VALUES('0020','Star Wars: Episode I - The Phantom Menace', '05/19/1999');
 INSERT INTO project.starsIn VALUES('0021','Star Wars: Episode I - The Phantom Menace', '05/19/1999');
 INSERT INTO project.starsIn VALUES('0022','Star Wars: Episode I - The Phantom Menace', '05/19/1999');
+INSERT INTO project.starsIn VALUES('0023','Star Wars: Episode I - The Phantom Menace', '05/19/1999');
+INSERT INTO project.starsIn VALUES('0024','Star Wars: Episode I - The Phantom Menace', '05/19/1999');
 
-INSERT INTO project.directs VALUES('0023','Star Wars: Episode I - The Phantom Menace', '05/19/1999');
+INSERT INTO project.directs VALUES('0025','Star Wars: Episode I - The Phantom Menace', '05/19/1999');
 
 INSERT INTO project.produces VALUES('Lucasfilm Ltd. LLC', 'Star Wars: Episode I - The Phantom Menace', '05/19/1999');
+
+--Star Wars: Episode II - Attack of the Clones
+INSERT INTO project.movie VALUES ('Star Wars: Episode II - Attack of the Clones', '05/16/2002', 65, 6.5, 115000000, 653800000);
+
+INSERT INTO project.person VALUES('0026', '04/19/1981', 'Hayden Christensen');
+INSERT INTO project.person VALUES('0027', '12/26/1960', 'Temuera Morrison');
+INSERT INTO project.person VALUES('0028', '05/27/1922', 'Christopher Lee');
+
+
+INSERT INTO project.starsIn VALUES('0013','Star Wars: Episode II - Attack of the Clones', '05/16/2002');
+INSERT INTO project.starsIn VALUES('0018','Star Wars: Episode II - Attack of the Clones', '05/16/2002');
+INSERT INTO project.starsIn VALUES('0020','Star Wars: Episode II - Attack of the Clones', '05/16/2002');
+INSERT INTO project.starsIn VALUES('0021','Star Wars: Episode II - Attack of the Clones', '05/16/2002');
+INSERT INTO project.starsIn VALUES('0022','Star Wars: Episode II - Attack of the Clones', '05/16/2002');
+INSERT INTO project.starsIn VALUES('0023','Star Wars: Episode II - Attack of the Clones', '05/16/2002');
+INSERT INTO project.starsIn VALUES('0026','Star Wars: Episode II - Attack of the Clones', '05/16/2002');
+INSERT INTO project.starsIn VALUES('0027','Star Wars: Episode II - Attack of the Clones', '05/16/2002');
+INSERT INTO project.starsIn VALUES('0028','Star Wars: Episode II - Attack of the Clones', '05/16/2002');
+
+INSERT INTO project.directs VALUES('0025','Star Wars: Episode II - Attack of the Clones', '05/16/2002');
+
+INSERT INTO project.produces VALUES('Lucasfilm Ltd. LLC', 'Star Wars: Episode II - Attack of the Clones', '05/16/2002');
+
+--Star Wars: Episode III - Revenge of the Sith
+INSERT INTO project.movie VALUES ('Star Wars: Episode III - Revenge of the Sith', '05/19/2005', 80, 7.5, 113000000, 868400000);
+
+INSERT INTO project.person VALUES('0029', '07/09/1955', 'Jimmy Smits');
+INSERT INTO project.person VALUES('0030', '06/23/1974', 'Joel Edgerton');
+
+INSERT INTO project.starsIn VALUES('0013','Star Wars: Episode III - Revenge of the Sith', '05/19/2005');
+INSERT INTO project.starsIn VALUES('0018','Star Wars: Episode III - Revenge of the Sith', '05/19/2005');
+INSERT INTO project.starsIn VALUES('0020','Star Wars: Episode III - Revenge of the Sith', '05/19/2005');
+INSERT INTO project.starsIn VALUES('0021','Star Wars: Episode III - Revenge of the Sith', '05/19/2005');
+INSERT INTO project.starsIn VALUES('0022','Star Wars: Episode III - Revenge of the Sith', '05/19/2005');
+INSERT INTO project.starsIn VALUES('0023','Star Wars: Episode III - Revenge of the Sith', '05/19/2005');
+INSERT INTO project.starsIn VALUES('0026','Star Wars: Episode III - Revenge of the Sith', '05/19/2005');
+INSERT INTO project.starsIn VALUES('0027','Star Wars: Episode III - Revenge of the Sith', '05/19/2005');
+INSERT INTO project.starsIn VALUES('0028','Star Wars: Episode III - Revenge of the Sith', '05/19/2005');
+INSERT INTO project.starsIn VALUES('0029','Star Wars: Episode III - Revenge of the Sith', '05/19/2005');
+INSERT INTO project.starsIn VALUES('0030','Star Wars: Episode III - Revenge of the Sith', '05/19/2005');
+
+INSERT INTO project.directs VALUES('0025','Star Wars: Episode III - Revenge of the Sith', '05/19/2005');
+
+INSERT INTO project.produces VALUES('Lucasfilm Ltd. LLC', 'Star Wars: Episode III - Revenge of the Sith', '05/19/2005');
 
 --SQL TEST QUERIES--
 -- SELECT * FROM project.person NATURAL JOIN project.directs;

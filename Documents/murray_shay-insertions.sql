@@ -206,8 +206,25 @@ INSERT INTO project.produces VALUES('New Regency Productions', 'Jumper', '02/14/
 
 -- EVERYTHING ABOVE ADDED TO THE DB
 
---SQL TEST QUERIES--
--- SELECT * FROM project.person NATURAL JOIN project.directs;
--- SELECT * FROM project.person NATURAL JOIN project.starsIn Natural JOIN project.movie WHERE person.name = 'Natalie Portman';
--- SELECT * FROM project.movie;
---SELECT * FROM project.produces NATURAL JOIN project.movie WHERE company_name = 'Marvel Entertainment' AND rt_rating >= 90;
+--Plan on adding at somepoint
+--Pulp Fiction
+--Grease
+--Star Wars: Episode IV - A New Hope
+--Star Wars: Episode V - The Empire Strikes Back
+--Star Wars: Episode VI - Return of the Jedi
+--Raiders Of The Lost Ark
+--Indiana Jones And The Temple Of Doom
+--Indiana Jones And The Last Crusade
+--Indiana Jones And The Kingdom Of The Crystal Skull
+--Transformers
+--Transformers: Revenge of the Fallen
+--Transformers: Dark Of The Moon
+--Transformers: Age of Extinction
+--Transformers: The Last Knight
+--The Avengers
+--Avengers: Age of Ultron
+--Avengers: Infinity Wars
+--Avengers: Endgame
+--Star Wars: Episode VII - The Force Awakens
+--Star Wars: Episode VIII - The Last Jedi
+--Star Wars: Episode IX - Rise of Skywalker

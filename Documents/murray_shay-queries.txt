@@ -1,0 +1,54 @@
+English: Which director has directed 2 or more movies and how many have they directed?
+SQL: SELECT name, COUNT(movie_title) FROM project.person NATURAL JOIN project.directs GROUP BY name HAVING COUNT(movie_title) >= 2 ;
+Results:
+name     | count
+--------------+-------
+Sam Raimi    |     3
+George Lucas |     3
+
+####################
+
+English: Which actors have been in any of the Spider-Man movies (alphabeticlly)?
+SQL: SELECT name FROM project.person NATURAL JOIN project.starsIn WHERE movie_title LIKE 'Spider-Man%' GROUP BY name ORDER BY name;
+Results:
+name
+---------------------
+Alfred Molina
+Bryce Dallas Howard
+James Franco
+J K Simmons
+Kristen Dunst
+Thomas Haden Church
+Tobey Maguire
+Topher Grace
+Willem Dafoe
+
+####################
+
+English: What is the average Rotten Tomatoes and IMBd rating from the Star Wars movies?
+SQL: SELECT AVG(rt_rating) AS Rotten_Tomatos, AVG(imdb_rating) AS IMDb FROM project.movie WHERE movie_title LIKE 'Star Wars%';
+Results:
+rotten_tomatos    |       imdb
+---------------------+-------------------
+65.6666666666666667 | 6.833333333333333
+
+####################
+
+English: Which movies have a higher budget than the average budget of all the movies in the database?
+SQL: SELECT movie_title FROM project.movie WHERE budget > (SELECT AVG(budget) FROM project.movie);
+Results:
+movie_title
+-------------------------------------------
+Spider-Man
+Spider-Man 2
+Spider-Man 3
+Star Wars: Episode I - The Phantom Menace
+####################
+
+English: Which movies have Regency Enterprises produced?
+SQL: SELECT movie_title FROM project.movie NATURAL JOIN project.produces WHERE company_name = 'Regency Enterprises';
+Results:
+movie_title
+----------------
+Jumper
+The Lighthouse

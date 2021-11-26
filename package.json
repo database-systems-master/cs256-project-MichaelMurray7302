@@ -1,0 +1,29 @@
+{
+  "name": "cs256-project-MichaelMurray7302",
+  "version": "1.0.0",
+  "description": "cs256-project-MichaelMurray7302 created by GitHub Classroom",
+  "main": "index.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "pg": "^8.7.1",
+    "tunnel-ssh": "^4.1.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/database-systems-master/cs256-project-MichaelMurray7302.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/database-systems-master/cs256-project-MichaelMurray7302/issues"
+  },
+  "homepage": "https://github.com/database-systems-master/cs256-project-MichaelMurray7302#readme"
+}

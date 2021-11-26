@@ -5,16 +5,60 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel = "stylesheet" href = style.css>
+    <script defer src="data.js" type="text/javascript"></script>
     <!-- <script defer src="data.js" type="text/javascript"></script> -->
   </head>
-  <body>
+  <body onload = "loadClasses()">
     <header>
       <div class = "Header">
         <h1>WeWantMovies.net</h1>
       </div>
+
+      <nav class="navbar">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href=#Movies class="nav-link">Movies</a>
+          </li>
+          <li class="nav-item">
+            <a href=#Actors class="nav-link">Actors</a>
+          </li>
+          <li class="nav-item">
+            <a href=#Directors class="nav-link">Directors</a>
+          </li>
+          <li class="nav-item">
+            <a href=#productionCompany class="nav-link">Production Company</a>
+          </li>
+        </ul>
+        <button class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </nav>
     </header>
+
+    <div class = "project.movie">
+      <h3 id = Movies> Movies </h3>
+      <table id="movie"></table>
+    </div>
+
+    <div class = "project.starsIn">
+      <h3 id = Actors> Actors </h3>
+      <table id="actor"></table>
+    </div>
+
+    <div class = "project.directs">
+      <h3 id = Directors> Directors </h3>
+      <table id="director"></table>
+    </div>
+
+    <div class = "project.productionCompany">
+      <h3 id = ProductionCompany> Production Company </h3>
+      <table id="productionCompany"></table>
+    </div>
+
     <div class= "Mission Statement">
-        <h3> Mission Statement </h3>
+        <h3 id = "MS"> Mission Statement </h3>
         <p>We like to watch movies...</p>
         <p>So we have compiled data from some of our most favorite ones</p>
         <p>Along with their ratings so we can *hopefully* put an end to the debates</p>

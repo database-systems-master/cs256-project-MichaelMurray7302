@@ -1,22 +1,13 @@
 // Use the REST API to get the initial data for the class tables
 function loadClasses() {
-    fetch("/project.movie")
+    fetch("/classes/sem/Fall")
     .then(response => response.json())  // body is not quite ready yet
-    .then(data => displayClasses(data,"movie"));     // now the body is ready
+    .then(data => displayClasses(data,"fall"));     // now the body is ready
 
-    //Add a fetch call for the spring semester as well
-    fetch("/project.starsIn")
+    // Add a fetch call for the spring semester as well
+    fetch("/classes/sem/Spring")
     .then(response => response.json())  // body is not quite ready yet
-    .then(data => displayClasses(data,"actor"));     // now the body is ready
-
-    fetch("/project.directs")
-    .then(response => response.json())  // body is not quite ready yet
-    .then(data => displayClasses(data,"director"));     // now the body is ready
-
-    fetch("/project.productionCompany")
-    .then(response => response.json())  // body is not quite ready yet
-    .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
-
+    .then(data => displayClasses(data,"spring"));     // now the body is ready
 }
 
 // display the classes being taught
@@ -62,7 +53,7 @@ function createClass() {
 
   //send the code to your endpoint using POST to add new class and then
   //call loadClasses to reload the tables
-  fetch("/project.movie"/*url of the endpoint*/,
+  fetch("/classes"/*url of the endpoint*/,
   {
       method: 'POST'/*HTML method for sending data*/,
       headers: {
@@ -70,34 +61,6 @@ function createClass() {
       },
       body: JSON.stringify(Object.fromEntries(formData))/* encode the form data as json*/,
   })
-
-  fetch("/project.starsIn"/*url of the endpoint*/,
-  {
-      method: 'POST'/*HTML method for sending data*/,
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(Object.fromEntries(formData))/* encode the form data as json*/,
-  })
-
-  fetch("/project.directs"/*url of the endpoint*/,
-  {
-      method: 'POST'/*HTML method for sending data*/,
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(Object.fromEntries(formData))/* encode the form data as json*/,
-  })
-
-  fetch("project.productionCompany"/*url of the endpoint*/,
-  {
-      method: 'POST'/*HTML method for sending data*/,
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(Object.fromEntries(formData))/* encode the form data as json*/,
-  })
-
   .then(response => {   // first then checks if the response is ready and if it
     if(!response.ok) {  // is ok (200) or an error (500)
       // if response not ok, throw an error

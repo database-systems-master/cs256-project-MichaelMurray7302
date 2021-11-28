@@ -267,10 +267,280 @@ const getproducctionCompanySpiderManTrilogy = (request, response) => {
  });
 };
 
+//Brothers Queries
+const getMoviesBrothers = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT * FROM project.movie WHERE movie_title = \'Brothers\'', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getActorBrothers = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.starsIn WHERE movie_title = \'Brothers\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getDirectorsBrothers = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.directs WHERE movie_title = \'Brothers\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getproducctionCompanyBrothers = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT company_name, year_est FROM project.productionCompany NATURAL JOIN  project.produces WHERE movie_title = \'Brothers\' ORDER BY company_name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+//Jumper Queries
+const getMoviesJumper = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT * FROM project.movie WHERE movie_title = \'Jumper\'', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getActorJumper = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.starsIn WHERE movie_title = \'Jumper\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getDirectorsJumper = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.directs WHERE movie_title = \'Jumper\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getproducctionCompanyJumper = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT company_name, year_est FROM project.productionCompany NATURAL JOIN  project.produces WHERE movie_title = \'Jumper\' ORDER BY company_name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+//The Lighthouse Queries
+const getMoviesTheLighthouse = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT * FROM project.movie WHERE movie_title = \'The Lighthouse\'', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getActorTheLighthouse = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.starsIn WHERE movie_title = \'The Lighthouse\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getDirectorsTheLighthouse = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.directs WHERE movie_title = \'The Lighthouse\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getproducctionCompanyTheLighthouse = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT company_name, year_est FROM project.productionCompany NATURAL JOIN  project.produces WHERE movie_title = \'The Lighthouse\' ORDER BY company_name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+//Starwars 1
+const getMoviesI = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT * FROM project.movie WHERE movie_title = \'Star Wars: Episode I - The Phantom Menace\'', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getActorI = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.starsIn WHERE movie_title = \'Star Wars: Episode I - The Phantom Menace\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getDirectorsI = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.directs WHERE movie_title = \'Star Wars: Episode I - The Phantom Menace\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getproducctionCompanyI = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT company_name, year_est FROM project.productionCompany NATURAL JOIN  project.produces WHERE movie_title = \'Star Wars: Episode I - The Phantom Menace\' ORDER BY company_name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+//Starwars 2
+const getMoviesII = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT * FROM project.movie WHERE movie_title = \'Star Wars: Episode II - Attack of the Clones\'', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getActorII = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.starsIn WHERE movie_title = \'Star Wars: Episode II - Attack of the Clones\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getDirectorsII = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.directs WHERE movie_title = \'Star Wars: Episode II - Attack of the Clones\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getproducctionCompanyII = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT company_name, year_est FROM project.productionCompany NATURAL JOIN  project.produces WHERE movie_title = \'Star Wars: Episode II - Attack of the Clones\' ORDER BY company_name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+//Starwars 3
+const getMoviesIII = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT * FROM project.movie WHERE movie_title = \'Star Wars: Episode III - Revenge of the Sith\'', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getActorIII = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.starsIn WHERE movie_title = \'Star Wars: Episode III - Revenge of the Sith\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getDirectorsIII = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.directs WHERE movie_title = \'Star Wars: Episode III - Revenge of the Sith\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getproducctionCompanyIII = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT company_name, year_est FROM project.productionCompany NATURAL JOIN  project.produces WHERE movie_title = \'Star Wars: Episode III - Revenge of the Sith\' ORDER BY company_name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
 // Export the database connection and CRUD functions
 module.exports = {
 	server,
-	//getClasses,
+	//getProject,
   getMovies,
   getActor,
   getDirectors,
@@ -298,7 +568,43 @@ module.exports = {
   getMoviesSpiderManTrilogy,
   getActorSpiderManTrilogy,
   getDirectorsSpiderManTrilogy,
-  getproducctionCompanySpiderManTrilogy
+  getproducctionCompanySpiderManTrilogy,
+
+  //Brothers
+  getMoviesBrothers,
+  getActorBrothers,
+  getDirectorsBrothers,
+  getproducctionCompanyBrothers,
+
+  //Jumper
+  getMoviesJumper,
+  getActorJumper,
+  getDirectorsJumper,
+  getproducctionCompanyJumper,
+
+  //TheLighthouse
+  getMoviesTheLighthouse,
+  getActorTheLighthouse,
+  getDirectorsTheLighthouse,
+  getproducctionCompanyTheLighthouse,
+
+  //Stawars 1
+  getMoviesI,
+  getActorI,
+  getDirectorsI,
+  getproducctionCompanyI,
+
+  //Stawars 2
+  getMoviesII,
+  getActorII,
+  getDirectorsII,
+  getproducctionCompanyII,
+
+  //Stawars 3
+  getMoviesIII,
+  getActorIII,
+  getDirectorsIII,
+  getproducctionCompanyIII
 
 
 };

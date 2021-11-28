@@ -8,7 +8,7 @@
     <script defer src="data.js" type="text/javascript"></script>
     <!-- <script defer src="data.js" type="text/javascript"></script> -->
   </head>
-  <body>
+  <body onload = "loadProject()">
     <header>
       <div class = "Header">
         <h1>WeWantMovies.net</h1>
@@ -38,7 +38,7 @@
     </header>
 
     <div id = "LoadAllData">
-      <button onclick = "loadClasses()"> Load All Data </button>
+      <button onclick = "loadProject()"> Show All Data </button>
     </div>
 
     <div id = "SpiderMan">
@@ -53,12 +53,37 @@
       <button onclick = "loadSpiderMan3()"> Spider-Man 3</button>
     </div>
 
-    <div id = "SpiderManTrilogy">
+    <!-- Get (for three movies) function works weird -->
+    <!-- <div id = "SpiderManTrilogy">
       <button onclick = "loadSpiderManTrilogy()"> Spider-Man:  The Trilogy</button>
+    </div> -->
+
+    <div id = "Brothers">
+      <button onclick = "loadBrothers()"> Brothers</button>
+    </div>
+
+    <div id = "Jumper">
+      <button onclick = "loadJumper()"> Jumper</button>
+    </div>
+
+    <div id = "TheLighthouse">
+      <button onclick = "loadTheLighthouse()"> The Lighthouse</button>
+    </div>
+
+    <div id = "I">
+      <button onclick = "loadI()"> Star Wars: Episode I - The Phantom Menace </button>
+    </div>
+
+    <div id = "II">
+      <button onclick = "loadII()"> Star Wars: Episode II - Attack of the Clones </button>
+    </div>
+
+    <div id = "III">
+      <button onclick = "loadIII()"> Star Wars: Episode III - Revenge of the Sith</button>
     </div>
 
     <div class = "project.movie">
-      <h3 id = Movies> Movies </h3>
+      <h3 id = Movies> Movie(s) </h3>
       <table id="movie"></table>
     </div>
 
@@ -68,12 +93,12 @@
     </div>
 
     <div class = "project.directs">
-      <h3 id = Directors> Directors </h3>
+      <h3 id = Directors> Director(s) </h3>
       <table id="director"></table>
     </div>
 
     <div class = "project.productionCompany">
-      <h3 id = ProductionCompany> Production Company </h3>
+      <h3 id = ProductionCompany> Production Companies </h3>
       <table id="productionCompany"></table>
     </div>
 

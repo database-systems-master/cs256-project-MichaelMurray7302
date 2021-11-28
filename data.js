@@ -1,10 +1,9 @@
-// Use the REST API to get the initial data for the class tables
+// Use the REST API to get the initial data for the project tables
 function loadClasses() {
     fetch("/project.movie")
     .then(response => response.json())  // body is not quite ready yet
     .then(data => displayClasses(data,"movie"));     // now the body is ready
 
-    //Add a fetch call for the spring semester as well
     fetch("/project.starsIn")
     .then(response => response.json())  // body is not quite ready yet
     .then(data => displayClasses(data,"actor"));     // now the body is ready
@@ -19,6 +18,85 @@ function loadClasses() {
 
 }
 
+//SpiderMan
+function loadSpiderMan() {
+    fetch("/project.movie/SpiderMan")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"movie"));     // now the body is ready
+
+    fetch("/project.starsIn/SpiderMan")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"actor"));     // now the body is ready
+
+    fetch("/project.directs/SpiderMan")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"director"));     // now the body is ready
+
+    fetch("/project.productionCompany/SpiderMan")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
+
+}
+
+//SpiderMan2
+function loadSpiderMan2() {
+    fetch("/project.movie/SpiderMan2")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"movie"));     // now the body is ready
+
+    fetch("/project.starsIn/SpiderMan2")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"actor"));     // now the body is ready
+
+    fetch("/project.directs/SpiderMan2")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"director"));     // now the body is ready
+
+    fetch("/project.productionCompany/SpiderMan2")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
+
+}
+
+//SpiderMan3
+function loadSpiderMan3() {
+    fetch("/project.movie/SpiderMan3")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"movie"));     // now the body is ready
+
+    fetch("/project.starsIn/SpiderMan3")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"actor"));     // now the body is ready
+
+    fetch("/project.directs/SpiderMan3")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"director"));     // now the body is ready
+
+    fetch("/project.productionCompany/SpiderMan3")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
+
+}
+
+//SpiderMan: Trilogy
+function loadSpiderManTrilogy() {
+    fetch("/project.movie/SpiderManTrilogy")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"movie"));     // now the body is ready
+
+    fetch("/project.starsIn/SpiderManTrilogy")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"actor"));     // now the body is ready
+
+    fetch("/project.directs/SpiderManTrilogy")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"director"));     // now the body is ready
+
+    fetch("/project.productionCompany/SpiderManTrilogy")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
+
+}
 // display the classes being taught
 function displayClasses(data,tableName) {
 
@@ -64,7 +142,7 @@ function createClass() {
   //call loadClasses to reload the tables
   fetch("/project.movie"/*url of the endpoint*/,
   {
-      method: 'POST'/*HTML method for sending data*/,
+      method: 'GET'/*HTML method for sending data*/,
       headers: {
         'Content-Type': 'application/json'
       },
@@ -73,7 +151,7 @@ function createClass() {
 
   fetch("/project.starsIn"/*url of the endpoint*/,
   {
-      method: 'POST'/*HTML method for sending data*/,
+      method: 'GET'/*HTML method for sending data*/,
       headers: {
         'Content-Type': 'application/json'
       },
@@ -82,7 +160,7 @@ function createClass() {
 
   fetch("/project.directs"/*url of the endpoint*/,
   {
-      method: 'POST'/*HTML method for sending data*/,
+      method: 'GET'/*HTML method for sending data*/,
       headers: {
         'Content-Type': 'application/json'
       },
@@ -91,7 +169,7 @@ function createClass() {
 
   fetch("project.productionCompany"/*url of the endpoint*/,
   {
-      method: 'POST'/*HTML method for sending data*/,
+      method: 'GET'/*HTML method for sending data*/,
       headers: {
         'Content-Type': 'application/json'
       },

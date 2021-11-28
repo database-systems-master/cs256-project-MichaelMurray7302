@@ -87,87 +87,185 @@ const getproducctionCompany = (request, response) => {
  });
 };
 
-// // Get classes by ID
-// const getClassesById = (request, response) => {
-// 	server.then((conn) => {
-//   	const id = request.params.id;
-//
-//   	conn.query('SELECT * FROM classes WHERE id = $1', [id], (error, results) => {
-// 	    if (error) {
-// 	      throw error;
-// 	    }
-// 	    response.status(200).json(results.rows);
-//   	});
-// 	});
-// };
-//
-// // Get classes by semester
-// const getClassesBySemester = (request, response) => {
-// 	server.then((conn) => {
-//     const semester = request.params.semester;
-//
-//   	conn.query('SELECT * FROM classes WHERE semester = $1', [semester], (error, results) => {
-// 	    if (error) {
-// 	      throw error;
-// 	    }
-// 	    response.status(200).json(results.rows);
-//
-//     // Write a query to show all classes for a specified semester
-//
-// 	   });
-//   });
-// };
-//
-// // Add a new class
-// const addClass = (request, response) => {
-// 	server.then((conn) => {
-//   	const { id, title, semester, year, credits } = request.body;
-//
-// 	conn.query('INSERT INTO classes VALUES ($1, $2, $3, $4, $5)', [id, title, semester, year, credits], (error, results) => {
-//     if(error) {
-//       console.log(`Printing error: ${error}`);
-//       if(error.code == '23505'){
-//       response.status(500).send(`Class ${id} already exists.`);
-//       }
-//     }
-// 	    response.status(200).send(`Class added with ID: ${id}`);
-//   	});
-// 	});
-// };
-//
-// // Update a class
-// const updateClass = (request, response) => {
-// 	server.then((conn) => {
-//     const id = request.params.id;
-//     const { title, semester, year, credits} = request.body;
-//     console.log(request.body);
-//
-//     conn.query("UPDATE classes SET title = $1, semester = $2, year = $3, credits = $4 WHERE id = $5", [title, semester, year, credits, id], (error, results) => {
-//       if (error) {
-//         throw error;
-//       }
-//       response.status(200).send(`Class Updated with Credits: ${id}`);
-//
-//     // Add a query to update a class based on it id
-//     	});
-// 	});
-// };
-//
-// // Delete a class
-// const deleteClass = (request, response) => {
-// 	server.then((conn) => {
-//     const id = request.params.id;
-//
-//     conn.query("DELETE FROM classes WHERE id = $1", [id], (error, results) => {
-//       if (error) {
-//         throw error;
-//       }
-//       response.status(200).send(`Class deleted based on ID: ${id}`);
-//
-//     // Add a query to delete a particular class given an id
-//     });
-// 	});
-// };
+// SpiderMan Queries
+const getMoviesSpiderMan = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT * FROM project.movie WHERE movie_title = \'Spider-Man\'', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getActorSpiderMan = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.starsIn WHERE movie_title = \'Spider-Man\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getDirectorsSpiderMan = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.directs WHERE movie_title = \'Spider-Man\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getproducctionCompanySpiderMan = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT company_name, year_est FROM project.productionCompany NATURAL JOIN  project.produces WHERE movie_title = \'Spider-Man\' ORDER BY company_name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+// SpiderMan2 Queries
+const getMoviesSpiderMan2 = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT * FROM project.movie WHERE movie_title = \'Spider-Man 2\'', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getActorSpiderMan2 = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.starsIn WHERE movie_title = \'Spider-Man 2\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getDirectorsSpiderMan2 = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.directs WHERE movie_title = \'Spider-Man 2\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getproducctionCompanySpiderMan2 = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT company_name, year_est FROM project.productionCompany NATURAL JOIN  project.produces WHERE movie_title = \'Spider-Man 2\' ORDER BY company_name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+// SpiderMan3 Queries
+const getMoviesSpiderMan3 = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT * FROM project.movie WHERE movie_title = \'Spider-Man 3\'', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getActorSpiderMan3 = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.starsIn WHERE movie_title = \'Spider-Man 3\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getDirectorsSpiderMan3 = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.directs WHERE movie_title = \'Spider-Man 3\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getproducctionCompanySpiderMan3 = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT company_name, year_est FROM project.productionCompany NATURAL JOIN  project.produces WHERE movie_title = \'Spider-Man 3\' ORDER BY company_name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+//SpiderManTrilogy
+const getMoviesSpiderManTrilogy = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT AVG(rt_rating), AVG(imdb_rating), SUM(budget), SUM(boxoffice) FROM project.movie WHERE movie_title = \'Spider-Man\' OR movie_title = \'Spider-Man 2\' OR movie_title = \'Spider-Man 3\'', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getActorSpiderManTrilogy = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.starsIn WHERE movie_title = \'Spider-Man\' OR movie_title = \'Spider-Man 2\' OR movie_title = \'Spider-Man 3\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getDirectorsSpiderManTrilogy = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.directs WHERE movie_title = \'Spider-Man\' OR movie_title = \'Spider-Man 2\' OR movie_title = \'Spider-Man 3\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getproducctionCompanySpiderManTrilogy = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT company_name, year_est FROM project.productionCompany NATURAL JOIN  project.produces WHERE movie_title = \'Spider-Man\' OR movie_title = \'Spider-Man 2\' OR movie_title = \'Spider-Man 3\' ORDER BY company_name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
 
 // Export the database connection and CRUD functions
 module.exports = {
@@ -176,10 +274,31 @@ module.exports = {
   getMovies,
   getActor,
   getDirectors,
-  getproducctionCompany
-	// getClassesById,
-	// getClassesBySemester,
-	// addClass,
-	// updateClass,
-	// deleteClass
+  getproducctionCompany,
+
+  //SpiderMan
+  getMoviesSpiderMan,
+  getActorSpiderMan,
+  getDirectorsSpiderMan,
+  getproducctionCompanySpiderMan,
+
+  //SpiderMan2
+  getMoviesSpiderMan2,
+  getActorSpiderMan2,
+  getDirectorsSpiderMan2,
+  getproducctionCompanySpiderMan2,
+
+  //SpiderMan3
+  getMoviesSpiderMan3,
+  getActorSpiderMan3,
+  getDirectorsSpiderMan3,
+  getproducctionCompanySpiderMan3,
+
+  //SpiderManTrilogy
+  getMoviesSpiderManTrilogy,
+  getActorSpiderManTrilogy,
+  getDirectorsSpiderManTrilogy,
+  getproducctionCompanySpiderManTrilogy
+
+
 };

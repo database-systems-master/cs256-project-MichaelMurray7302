@@ -225,7 +225,7 @@ const getproducctionCompanySpiderMan3 = (request, response) => {
 //SpiderManTrilogy
 const getMoviesSpiderManTrilogy = (request, response) => {
 	server.then((conn) => {
-    conn.query('SELECT AVG(rt_rating), AVG(imdb_rating), SUM(budget), SUM(boxoffice) FROM project.movie WHERE movie_title = \'Spider-Man\' OR movie_title = \'Spider-Man 2\' OR movie_title = \'Spider-Man 3\'', (error, results) => {
+    conn.query('SELECT \'Spiderman: Trilogy\', AVG(rt_rating) AS RT, AVG(imdb_rating) AS IMDB, SUM(budget) AS BUDGET, SUM(boxoffice) AS BOXOFFICE FROM project.movie WHERE movie_title = \'Spider-Man\' OR movie_title = \'Spider-Man 2\' OR movie_title = \'Spider-Man 3\'', (error, results) => {
       if (error) {
         throw error;
       }
@@ -537,6 +537,51 @@ const getproducctionCompanyIII = (request, response) => {
  });
 };
 
+//Starwars: Prequels
+const getMoviesPrequels = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT \'Star Wars: The Prequels\', AVG(rt_rating) AS RT, AVG(imdb_rating) AS IMDB, SUM(budget) AS BUDGET, SUM(boxoffice) AS BOXOFFICE FROM project.movie WHERE movie_title = \'Star Wars: Episode I - The Phantom Menace\' OR movie_title = \'Star Wars: Episode II - Attack of the Clones\' OR  movie_title = \'Star Wars: Episode III - Revenge of the Sith\'', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getActorPrequels = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.starsIn WHERE movie_title = \'Star Wars: Episode III - Revenge of the Sith\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getDirectorsPrequels = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.directs WHERE movie_title = \'Star Wars: Episode III - Revenge of the Sith\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getproducctionCompanyPrequels = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT company_name, year_est FROM project.productionCompany NATURAL JOIN  project.produces WHERE movie_title = \'Star Wars: Episode III - Revenge of the Sith\' ORDER BY company_name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
 // Export the database connection and CRUD functions
 module.exports = {
 	server,
@@ -604,7 +649,15 @@ module.exports = {
   getMoviesIII,
   getActorIII,
   getDirectorsIII,
-  getproducctionCompanyIII
+  getproducctionCompanyIII,
+
+  //Stawars: Prequels
+  getMoviesPrequels,
+  getActorPrequels,
+  getDirectorsPrequels,
+  getproducctionCompanyPrequels
+
+
 
 
 };

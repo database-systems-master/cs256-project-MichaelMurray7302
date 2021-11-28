@@ -99,6 +99,12 @@ app.get('/project.starsIn/III' ,db.getActorIII);
 app.get('/project.directs/III' ,db.getDirectorsIII);
 app.get('/project.productionCompany/III' ,db.getproducctionCompanyIII)
 
+//Starwars: prequels
+app.get('/project.movie/Prequels' ,db.getMoviesPrequels);
+app.get('/project.starsIn/Prequels' ,db.getActorPrequels);
+app.get('/project.directs/Prequels' ,db.getDirectorsPrequels);
+app.get('/project.productionCompany/Prequels' ,db.getproducctionCompanyPrequels)
+
 // Start server
 app.listen(process.env.PORT || 3000, () => {
   console.log('Server listening');

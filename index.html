@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel = "stylesheet" href = style.css>
     <script defer src="data.js" type="text/javascript"></script>
+    <script defer src="index.js" type="text/javascript"></script>
     <!-- <script defer src="data.js" type="text/javascript"></script> -->
   </head>
   <body onload = "loadProject()">
@@ -13,32 +14,43 @@
       <div class = "Header">
         <h1>WeWantMovies.net</h1>
       </div>
-
-      <nav class="navbar">
-        <ul class="nav-menu">
-          <li class="nav-item">
-            <a href=#Movies class="nav-link">Movies</a>
-          </li>
-          <li class="nav-item">
-            <a href=#Actors class="nav-link">Actors</a>
-          </li>
-          <li class="nav-item">
-            <a href=#Directors class="nav-link">Directors</a>
-          </li>
-          <li class="nav-item">
-            <a href=#productionCompany class="nav-link">Production Company</a>
-          </li>
-          <li class="nav-item">
-            <a href=#MS class="nav-link">Mission Statement</a>
-          </li>
-        </ul>
-        <button class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-      </nav>
     </header>
+
+    <div class = space2 >
+      <p> empty </p>
+    </div>
+
+    <nav class="navbar">
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href=#Movies class="nav-link">Movies</a>
+        </li>
+        <li class="nav-item">
+          <a href=#Actors class="nav-link">Actors</a>
+        </li>
+        <li class="nav-item">
+          <a href=#Directors class="nav-link">Directors</a>
+        </li>
+        <li class="nav-item">
+          <a href=#productionCompany class="nav-link">Production Company</a>
+        </li>
+        <li class="nav-item">
+          <a href=#MS class="nav-link">Mission Statement</a>
+        </li>
+      </ul>
+      <button class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
+    <div class = space >
+      <p> empty </p>
+    </div>
+
+    <div class = space >
+      <p> empty </p>
+    </div>
 
     <div id = "LoadAllData">
       <button onclick = "loadProject()"> Show All Data </button>
@@ -48,46 +60,67 @@
       <button onclick = "loadSpiderMan()"> Spider-Man </button>
     </div>
 
-    <div id = "SpiderMan2">
-      <button onclick = "loadSpiderMan2()"> Spider-Man 2</button>
+    <div id = "I">
+      <button onclick = "loadI()"> Star Wars: Episode I - The Phantom Menace </button>
     </div>
 
-    <div id = "SpiderMan3">
-      <button onclick = "loadSpiderMan3()"> Spider-Man 3</button>
-    </div>
-
-    <!-- Get (for three movies) function works weird -->
-    <div id = "SpiderManTrilogy">
-      <button onclick = "loadSpiderManTrilogy()"> Spider-Man:  The Trilogy</button>
+    <div id = "SJ">
+      <button onclick = "loadSJ()"> Movies Starring Samuel L. Jackson</button>
     </div>
 
     <div id = "Brothers">
       <button onclick = "loadBrothers()"> Brothers</button>
     </div>
 
-    <div id = "Jumper">
-      <button onclick = "loadJumper()"> Jumper</button>
-    </div>
-
-    <div id = "TheLighthouse">
-      <button onclick = "loadTheLighthouse()"> The Lighthouse</button>
-    </div>
-
-    <div id = "I">
-      <button onclick = "loadI()"> Star Wars: Episode I - The Phantom Menace </button>
+    <div id = "SpiderMan2">
+      <button onclick = "loadSpiderMan2()"> Spider-Man 2</button>
     </div>
 
     <div id = "II">
       <button onclick = "loadII()"> Star Wars: Episode II - Attack of the Clones </button>
     </div>
 
+    <div id = "fifty">
+      <button onclick = "loadfifty()"> Actors and Directors who are 50 or older</button>
+    </div>
+
+    <div id = "Jumper">
+      <button onclick = "loadJumper()"> Jumper</button>
+    </div>
+
+    <div id = "SpiderMan3">
+      <button onclick = "loadSpiderMan3()"> Spider-Man 3</button>
+    </div>
+
     <div id = "III">
       <button onclick = "loadIII()"> Star Wars: Episode III - Revenge of the Sith</button>
+    </div>
+
+    <div id = "BestRT">
+      <button onclick = "loadBestRT()">Movies in order of Rotten Tomato Rating</button>
+    </div>
+
+    <div id = "TheLighthouse">
+      <button onclick = "loadTheLighthouse()"> The Lighthouse</button>
+    </div>
+
+    <div id = "SpiderManTrilogy">
+      <button onclick = "loadSpiderManTrilogy()"> Spider-Man:  The Trilogy</button>
     </div>
 
     <div id = "StarwarsPrequels">
       <button onclick = "loadPrequels()"> Star Wars: The Prequels</button>
     </div>
+
+    <div id = "BestIMDB">
+      <button onclick = "loadBestIMDB()">Movies in order of IMdB Rating</button>
+    </div>
+
+    <div class = space >
+      <p> empty </p>
+    </div>
+
+    <!-- SELECT name, birthday FROM project.person WHERE CAST(birthday AS date) < CAST('12/31/1971' AS date) ORDER BY CAST(birthday AS date); -->
 
     <div class = "project.movie">
       <h3 id = Movies> Movie(s) </h3>
@@ -104,12 +137,13 @@
       <table id="director"></table>
     </div>
 
+
     <div class = "project.productionCompany">
       <h3 id = ProductionCompany> Production Companies </h3>
       <table id="productionCompany"></table>
     </div>
 
-    <div class= "Mission Statement">
+    <div class= "MissionStatement">
         <h3 id = "MS"> Mission Statement </h3>
         <p>We like to watch movies...</p>
         <p>So we have compiled data from some of our most favorite ones</p>

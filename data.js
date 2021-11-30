@@ -236,6 +236,82 @@ function loadPrequels() {
 
 }
 
+function loadSJ() {
+    fetch("/project.movie/SJ")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"movie"));     // now the body is ready
+
+    fetch("/project.starsIn/SJ")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"actor"));     // now the body is ready
+
+    fetch("/project.directs/SJ")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"director"));     // now the body is ready
+
+    fetch("/project.productionCompany/SJ")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
+
+}
+
+function loadfifty() {
+    fetch("/project.movie/fifty")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"movie"));     // now the body is ready
+
+    fetch("/project.starsIn/fifty")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"actor"));     // now the body is ready
+
+    fetch("/project.directs/fifty")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"director"));     // now the body is ready
+
+    fetch("/project.productionCompany/fifty")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
+
+}
+
+function loadBestRT() {
+    fetch("/project.movie/RT")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"movie"));     // now the body is ready
+
+    fetch("/project.starsIn/RT")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"actor"));     // now the body is ready
+
+    fetch("/project.directs/RT")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"director"));     // now the body is ready
+
+    fetch("/project.productionCompany/RT")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
+
+}
+
+function loadBestIMDB() {
+    fetch("/project.movie/IMDB")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"movie"));     // now the body is ready
+
+    fetch("/project.starsIn/IMDB")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"actor"));     // now the body is ready
+
+    fetch("/project.directs/IMDB")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"director"));     // now the body is ready
+
+    fetch("/project.productionCompany/IMDB")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
+
+}
+
 // display the project data
 function displayClasses(data,tableName) {
 
@@ -252,6 +328,13 @@ function displayClasses(data,tableName) {
     var row = document.createElement('tr');
     var cell = document.createElement('td');
     for (var x=0 in data[i]){
+      if (i == 0) {
+        var header = document.createElement('th');
+        var textNode1 = document.createTextNode(x);
+        header.appendChild(textNode1);
+        row.appendChild(header);
+        table.appendChild(header);
+      }
       var cell = document.createElement('td');
       var textNode = document.createTextNode(data[i][x]);
       cell.appendChild(textNode);

@@ -45,7 +45,7 @@ var server = new Promise(function(resolve, reject){
 // Get all movies
 const getMovies = (request, response) => {
 	server.then((conn) => {
-    conn.query('SELECT movie_title FROM project.movie ORDER BY movie_title', (error, results) => {
+    conn.query('SELECT * FROM project.movie ORDER BY movie_title', (error, results) => {
       if (error) {
         throw error;
       }
@@ -225,7 +225,7 @@ const getproducctionCompanySpiderMan3 = (request, response) => {
 //SpiderManTrilogy
 const getMoviesSpiderManTrilogy = (request, response) => {
 	server.then((conn) => {
-    conn.query('SELECT \'Spiderman: Trilogy\', AVG(rt_rating) AS RT, AVG(imdb_rating) AS IMDB, SUM(budget) AS BUDGET, SUM(boxoffice) AS BOXOFFICE FROM project.movie WHERE movie_title = \'Spider-Man\' OR movie_title = \'Spider-Man 2\' OR movie_title = \'Spider-Man 3\'', (error, results) => {
+    conn.query('SELECT \'Spiderman: Trilogy\' AS movie_title, CAST(AVG(rt_rating) AS NUMERIC(5,2)) AS Rotten_Tomatoes_Rating, CAST (AVG(imdb_rating) AS NUMERIC(5,2)) AS IMDB_Rating, CONCAT (SUM(budget)/ 1000000, \' M\') AS BUDGET, CONCAT (SUM(boxoffice)/ 1000000, \' M\') AS BOXOFFICE FROM project.movie WHERE movie_title = \'Spider-Man\' OR movie_title = \'Spider-Man 2\' OR movie_title = \'Spider-Man 3\'', (error, results) => {
       if (error) {
         throw error;
       }
@@ -540,7 +540,7 @@ const getproducctionCompanyIII = (request, response) => {
 //Starwars: Prequels
 const getMoviesPrequels = (request, response) => {
 	server.then((conn) => {
-    conn.query('SELECT \'Star Wars: The Prequels\', AVG(rt_rating) AS RT, AVG(imdb_rating) AS IMDB, SUM(budget) AS BUDGET, SUM(boxoffice) AS BOXOFFICE FROM project.movie WHERE movie_title = \'Star Wars: Episode I - The Phantom Menace\' OR movie_title = \'Star Wars: Episode II - Attack of the Clones\' OR  movie_title = \'Star Wars: Episode III - Revenge of the Sith\'', (error, results) => {
+    conn.query('SELECT \'Star Wars: The Prequels\' AS movie_title, CAST(AVG(rt_rating) AS NUMERIC(5,2)) AS Rotten_Tomatoes_Rating, CAST (AVG(imdb_rating) AS NUMERIC(5,2)) AS IMDB_RATING, CONCAT (SUM(budget)/ 1000000, \' M\') AS BUDGET, CONCAT (SUM(boxoffice)/ 1000000, \' M\') AS BOXOFFICE FROM project.movie WHERE movie_title = \'Star Wars: Episode I - The Phantom Menace\' OR movie_title = \'Star Wars: Episode II - Attack of the Clones\' OR  movie_title = \'Star Wars: Episode III - Revenge of the Sith\'', (error, results) => {
       if (error) {
         throw error;
       }
@@ -574,6 +574,187 @@ const getDirectorsPrequels = (request, response) => {
 const getproducctionCompanyPrequels = (request, response) => {
 	server.then((conn) => {
     conn.query('SELECT DISTINCT company_name, year_est FROM project.productionCompany NATURAL JOIN  project.produces WHERE movie_title = \'Star Wars: Episode III - Revenge of the Sith\' ORDER BY company_name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+//Fifty Query
+const getMoviesfifty = (request, response) => {
+	server.then((conn) => {
+    conn.query('', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getActorfifty = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT name, birthday FROM project.person WHERE CAST(birthday AS date) < CAST(\'12/31/1971\' AS date) AND name NOT IN (SELECT name FROM project.person NATURAL JOIN project.directs) ORDER BY CAST(birthday AS date)', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getDirectorsfifty = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT name, birthday FROM project.person WHERE CAST(birthday AS date) < CAST(\'12/31/1971\' AS date) AND name NOT IN (SELECT name FROM project.person NATURAL JOIN project.starsIn) ORDER BY CAST(birthday AS date)', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getproducctionCompanyfifty = (request, response) => {
+	server.then((conn) => {
+    conn.query('', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+//Samuel L. Jackson Query
+const getMoviesSJ = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT movie_title, rt_rating, imdb_rating, budget, boxoffice FROM project.movie NATURAL JOIN project.starsIn NATURAL JOIN project.person WHERE name = \'Samuel L. Jackson\'', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getActorSJ = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.starsIn WHERE name = \'Samuel L. Jackson\'', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getDirectorsSJ = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.directs WHERE movie_title IN (SELECT movie_title FROM project.movie NATURAL JOIN project.starsIn NATURAL JOIN project.person WHERE name = \'Samuel L. Jackson\')', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getproducctionCompanySJ = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT company_name FROM project.movie NATURAL JOIN project.produces WHERE movie_title IN (SELECT movie_title FROM project.movie NATURAL JOIN project.starsIn NATURAL JOIN project.person WHERE name = \'Samuel L. Jackson\')', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+//RT Query
+const getMoviesRT = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT * FROM project.movie ORDER BY rt_rating DESC', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getActorRT = (request, response) => {
+	server.then((conn) => {
+    conn.query('', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getDirectorsRT = (request, response) => {
+	server.then((conn) => {
+    conn.query('', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getproducctionCompanyRT = (request, response) => {
+	server.then((conn) => {
+    conn.query('', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+
+//imdb Query
+const getMoviesimdb = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT * FROM project.movie ORDER BY imdb_rating DESC', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getActorimdb = (request, response) => {
+	server.then((conn) => {
+    conn.query('', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getDirectorsimdb = (request, response) => {
+	server.then((conn) => {
+    conn.query('', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getproducctionCompanyimdb = (request, response) => {
+	server.then((conn) => {
+    conn.query('', (error, results) => {
       if (error) {
         throw error;
       }
@@ -655,7 +836,31 @@ module.exports = {
   getMoviesPrequels,
   getActorPrequels,
   getDirectorsPrequels,
-  getproducctionCompanyPrequels
+  getproducctionCompanyPrequels,
+
+  //Samuel L. Jackson Queries
+  getMoviesSJ,
+  getActorSJ,
+  getDirectorsSJ,
+  getproducctionCompanySJ,
+
+  //Fifty Queries
+  getMoviesfifty,
+  getActorfifty,
+  getDirectorsfifty,
+  getproducctionCompanyfifty,
+
+  //RT Queries
+  getMoviesRT,
+  getActorRT,
+  getDirectorsRT,
+  getproducctionCompanyRT,
+
+  //imdb Queries
+  getMoviesimdb,
+  getActorimdb,
+  getDirectorsimdb,
+  getproducctionCompanyimdb
 
 
 

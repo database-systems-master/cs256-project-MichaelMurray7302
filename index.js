@@ -12,7 +12,7 @@ const h6 = document.querySelector("h6");
 
 // Your code here!
 hamburger.addEventListener("click", toggleActive);
-darkmode.addEventListener("click", toggleDarkM);
+//darkmode.addEventListener("click", toggleDarkM);
 
 
 
@@ -52,15 +52,15 @@ function closeMenu() {
 
 // Darkmode button
 
-darkmode.addEventListener("click", toggleDarkM);
-
-function toggleDarkM() {
-  darkmode.classList.toggle("active");
-  body.classList.toggle("active");
-  h1.classList.toggle("active");
-  for (var i=0; i,h3.length; i++){
-    h3[i].classList.toggle("active");
-  }
-  h3.classList.toggle("active");
-  h6.classList.toggle("active");
-}
+// darkmode.addEventListener("click", toggleDarkM);
+//
+// function toggleDarkM() {
+//   darkmode.classList.toggle("active");
+//   body.classList.toggle("active");
+//   h1.classList.toggle("active");
+//   for (var i=0; i,h3.length; i++){
+//     h3[i].classList.toggle("active");
+//   }
+//   h3.classList.toggle("active");
+//   h6.classList.toggle("active");
+// }

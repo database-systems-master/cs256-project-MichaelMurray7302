@@ -105,6 +105,30 @@ app.get('/project.starsIn/Prequels' ,db.getActorPrequels);
 app.get('/project.directs/Prequels' ,db.getDirectorsPrequels);
 app.get('/project.productionCompany/Prequels' ,db.getproducctionCompanyPrequels)
 
+//SJ Queries
+app.get('/project.movie/SJ' ,db.getMoviesSJ);
+app.get('/project.starsIn/SJ' ,db.getActorSJ);
+app.get('/project.directs/SJ' ,db.getDirectorsSJ);
+app.get('/project.productionCompany/SJ' ,db.getproducctionCompanySJ)
+
+//Fifty Queries
+app.get('/project.movie/fifty' ,db.getMoviesfifty);
+app.get('/project.starsIn/fifty' ,db.getActorfifty);
+app.get('/project.directs/fifty' ,db.getDirectorsfifty);
+app.get('/project.productionCompany/fifty' ,db.getproducctionCompanyfifty)
+
+//RT Queries
+app.get('/project.movie/RT' ,db.getMoviesRT);
+app.get('/project.starsIn/RT' ,db.getActorRT);
+app.get('/project.directs/RT' ,db.getDirectorsRT);
+app.get('/project.productionCompany/RT' ,db.getproducctionCompanyRT)
+
+//IMDB Queries
+app.get('/project.movie/IMDB' ,db.getMoviesimdb);
+app.get('/project.starsIn/IMDB' ,db.getActorimdb);
+app.get('/project.directs/IMDB' ,db.getDirectorsimdb);
+app.get('/project.productionCompany/IMDB' ,db.getproducctionCompanyimdb)
+
 // Start server
 app.listen(process.env.PORT || 3000, () => {
   console.log('Server listening');

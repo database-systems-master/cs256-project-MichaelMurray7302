@@ -66,23 +66,27 @@ th, td, tr {
   border-radius: 10px;
 }
 
+td:hover {
+  background: mediumorchid;
+  color: Gainsboro;
+}
+
 button {
   padding: 10px;
   float:left;
   width: 25%;
   border-radius: 20px;
+  background-color: Gainsboro;
 }
 
+button:hover{
+  background-color: darkgray;
+  color: mediumorchid;
+}
 .space {
   visibility: hidden;
   font-size: 1px;
   padding: 5px;
-}
-
-.space2 {
-  visibility: hidden;
-  font-size: 1px;
-  padding: -100px;
 }
 
 .MissionStatement {
@@ -94,6 +98,9 @@ button {
 hr {
   color: gray
 }
+
+/*hamburger css*/
+
 /* Navigation Bar */
 nav li 	 {list-style: none;} /* No bullets */
 
@@ -188,7 +195,6 @@ position to 0 (no longer hiding at left position -100%) */
 
   th, td, tr {
     border: 1px;
-    /* padding-left: 30px; */
     padding-right: 10px;
     padding: 5px;
     border-radius: 10px;
@@ -224,17 +230,10 @@ position to 0 (no longer hiding at left position -100%) */
   table{
     font-size: 25%;
   }
-  /* .nav-link {
-    font-size: 75%;
-  } */
 }
 
   @media (max-width: 225px) {
     table{
       font-size: 10%;
     }
-    /* .nav-link {
-      font-size: 50%;
-    }
-    .nav-item { margin-left: 0rem; margin-right: 2rem;}
-  } */
+  }

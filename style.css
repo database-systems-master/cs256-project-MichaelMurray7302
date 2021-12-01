@@ -137,6 +137,8 @@ position to 0 (no longer hiding at left position -100%) */
 
 /* display the hamburger as a clickable button, but make it blend in */
 .hamburger {
+    position: relative;
+    top: 13px;
     width: 100%;
     text-align: center;
     background: Gainsboro;
@@ -171,10 +173,15 @@ position to 0 (no longer hiding at left position -100%) */
     transform: translateY(-8px) rotate(-45deg);
 }
 
-@media (max-width: 601px) {
-  .nav-menu {
-    left: -800px;
+@media (max-width: 1156px) {
+  button {
+    padding: 10px;
+    float:left;
+    width: 100%;
+    border-radius: 20px;
   }
+
+@media (max-width: 651px) {
   .Header{
     font-size: 75%;
   }
@@ -200,41 +207,18 @@ position to 0 (no longer hiding at left position -100%) */
     width: 100%;
     background-color: Gainsboro;
     z-index: 1;
+
   }
 
-  button {
-    padding: 10px;
-    float:left;
-    width: 100%;
-    border-radius: 20px;
+    button {
+      padding: 10px;
+      float:left;
+      width: 100%;
+      border-radius: 20px;
+    }
+
   }
-
-
 }
-
-@media (min-width: 801px) {
-  /* .hamburger {
-    visibility: hidden;
-  }
-  .nav-menu {
-    position: absolute;
-    float:left;
-    left: 3%;
-    top: 145px;
-    border:0px solid black;
-    width: 90%;
-    height: 40px;
-  }
-
-  .navbar   {text-align: center; display: flex; align-items: center; padding: .5rem;}
-
-  .nav-item {
-    float:left;
-    width: 10%;
-  }
-
-  .nav-link{text-align: center; font-size: 15px; font-weight: 100; color: black;}
-  } */
 
 @media (max-width: 345px) {
   table{
@@ -243,7 +227,7 @@ position to 0 (no longer hiding at left position -100%) */
   /* .nav-link {
     font-size: 75%;
   } */
-  .nav-item { margin-left: 2rem; margin-right: 4rem;}
+}
 
   @media (max-width: 225px) {
     table{

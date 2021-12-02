@@ -77,6 +77,7 @@ button {
   width: 25%;
   border-radius: 20px;
   background-color: Gainsboro;
+  border: 2px solid DimGray;
 }
 
 button:hover{
@@ -151,7 +152,7 @@ position to 0 (no longer hiding at left position -100%) */
     background: Gainsboro;
     border-radius: 25px;
     background: Gainsboro;
-    border: gray;
+    border: 2px solid DimGray;
 }
 
 /* draw the hamburger--all spans will be filled with dark background and stacked on top of each other */
@@ -186,6 +187,7 @@ position to 0 (no longer hiding at left position -100%) */
     float:left;
     width: 100%;
     border-radius: 20px;
+    border: 2px solid DimGray;
   }
 
 @media (max-width: 651px) {
@@ -221,6 +223,7 @@ position to 0 (no longer hiding at left position -100%) */
       float:left;
       width: 100%;
       border-radius: 20px;
+      border: 2px solid DimGray;
     }
 
   }

@@ -87,6 +87,17 @@ const getproducctionCompany = (request, response) => {
  });
 };
 
+const getWriters = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.writes ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
 // SpiderMan Queries
 const getMoviesSpiderMan = (request, response) => {
 	server.then((conn) => {
@@ -124,6 +135,17 @@ const getDirectorsSpiderMan = (request, response) => {
 const getproducctionCompanySpiderMan = (request, response) => {
 	server.then((conn) => {
     conn.query('SELECT DISTINCT company_name, year_est FROM project.productionCompany NATURAL JOIN  project.produces WHERE movie_title = \'Spider-Man\' ORDER BY company_name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getWritersSpiderMan = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.writes WHERE movie_title = \'Spider-Man\' ORDER BY name', (error, results) => {
       if (error) {
         throw error;
       }
@@ -177,6 +199,17 @@ const getproducctionCompanySpiderMan2 = (request, response) => {
  });
 };
 
+const getWritersSpiderMan2 = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.writes WHERE movie_title = \'Spider-Man 2\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
 // SpiderMan3 Queries
 const getMoviesSpiderMan3 = (request, response) => {
 	server.then((conn) => {
@@ -214,6 +247,17 @@ const getDirectorsSpiderMan3 = (request, response) => {
 const getproducctionCompanySpiderMan3 = (request, response) => {
 	server.then((conn) => {
     conn.query('SELECT DISTINCT company_name, year_est FROM project.productionCompany NATURAL JOIN  project.produces WHERE movie_title = \'Spider-Man 3\' ORDER BY company_name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getWritersSpiderMan3 = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.writes WHERE movie_title = \'Spider-Man 3\' ORDER BY name', (error, results) => {
       if (error) {
         throw error;
       }
@@ -267,6 +311,17 @@ const getproducctionCompanySpiderManTrilogy = (request, response) => {
  });
 };
 
+const getWritersSpiderManTrilogy = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.writes WHERE movie_title = \'Spider-Man\' OR movie_title = \'Spider-Man 2\' OR movie_title = \'Spider-Man 3\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
 //Brothers Queries
 const getMoviesBrothers = (request, response) => {
 	server.then((conn) => {
@@ -304,6 +359,17 @@ const getDirectorsBrothers = (request, response) => {
 const getproducctionCompanyBrothers = (request, response) => {
 	server.then((conn) => {
     conn.query('SELECT DISTINCT company_name, year_est FROM project.productionCompany NATURAL JOIN  project.produces WHERE movie_title = \'Brothers\' ORDER BY company_name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getWritersBrothers = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.writes WHERE movie_title = \'Brothers\' ORDER BY name', (error, results) => {
       if (error) {
         throw error;
       }
@@ -357,6 +423,17 @@ const getproducctionCompanyJumper = (request, response) => {
  });
 };
 
+const getWritersJumper = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.writes WHERE movie_title = \'Jumper\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
 //The Lighthouse Queries
 const getMoviesTheLighthouse = (request, response) => {
 	server.then((conn) => {
@@ -394,6 +471,17 @@ const getDirectorsTheLighthouse = (request, response) => {
 const getproducctionCompanyTheLighthouse = (request, response) => {
 	server.then((conn) => {
     conn.query('SELECT DISTINCT company_name, year_est FROM project.productionCompany NATURAL JOIN  project.produces WHERE movie_title = \'The Lighthouse\' ORDER BY company_name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getWritersTheLighthouse = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.writes WHERE movie_title = \'The Lighthouse\' ORDER BY name', (error, results) => {
       if (error) {
         throw error;
       }
@@ -447,6 +535,17 @@ const getproducctionCompanyI = (request, response) => {
  });
 };
 
+const getWritersI = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.writes WHERE movie_title = \'Star Wars: Episode I - The Phantom Menace\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
 //Starwars 2
 const getMoviesII = (request, response) => {
 	server.then((conn) => {
@@ -484,6 +583,17 @@ const getDirectorsII = (request, response) => {
 const getproducctionCompanyII = (request, response) => {
 	server.then((conn) => {
     conn.query('SELECT DISTINCT company_name, year_est FROM project.productionCompany NATURAL JOIN  project.produces WHERE movie_title = \'Star Wars: Episode II - Attack of the Clones\' ORDER BY company_name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getWritersII = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.writes WHERE movie_title = \'Star Wars: Episode II - Attack of the Clones\' ORDER BY name', (error, results) => {
       if (error) {
         throw error;
       }
@@ -537,6 +647,17 @@ const getproducctionCompanyIII = (request, response) => {
  });
 };
 
+const getWritersIII = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.writes WHERE movie_title = \'Star Wars: Episode III - Revenge of the Sith\' ORDER BY name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
 //Starwars: Prequels
 const getMoviesPrequels = (request, response) => {
 	server.then((conn) => {
@@ -551,7 +672,7 @@ const getMoviesPrequels = (request, response) => {
 
 const getActorPrequels = (request, response) => {
 	server.then((conn) => {
-    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.starsIn WHERE movie_title = \'Star Wars: Episode III - Revenge of the Sith\' ORDER BY name', (error, results) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.starsIn WHERE movie_title = \'Star Wars: Episode I - The Phantom Menace\' OR movie_title = \'Star Wars: Episode II - Attack of the Clones\' OR  movie_title = \'Star Wars: Episode III - Revenge of the Sith\' ORDER BY name', (error, results) => {
       if (error) {
         throw error;
       }
@@ -562,7 +683,7 @@ const getActorPrequels = (request, response) => {
 
 const getDirectorsPrequels = (request, response) => {
 	server.then((conn) => {
-    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.directs WHERE movie_title = \'Star Wars: Episode III - Revenge of the Sith\' ORDER BY name', (error, results) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.directs WHERE movie_title = \'Star Wars: Episode I - The Phantom Menace\' OR movie_title = \'Star Wars: Episode II - Attack of the Clones\' OR  movie_title = \'Star Wars: Episode III - Revenge of the Sith\' ORDER BY name', (error, results) => {
       if (error) {
         throw error;
       }
@@ -574,6 +695,17 @@ const getDirectorsPrequels = (request, response) => {
 const getproducctionCompanyPrequels = (request, response) => {
 	server.then((conn) => {
     conn.query('SELECT DISTINCT company_name, year_est FROM project.productionCompany NATURAL JOIN  project.produces WHERE movie_title = \'Star Wars: Episode III - Revenge of the Sith\' ORDER BY company_name', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getWritersPrequels = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.writes WHERE movie_title = \'Star Wars: Episode I - The Phantom Menace\' OR movie_title = \'Star Wars: Episode II - Attack of the Clones\' OR  movie_title = \'Star Wars: Episode III - Revenge of the Sith\' ORDER BY name', (error, results) => {
       if (error) {
         throw error;
       }
@@ -596,7 +728,7 @@ const getMoviesfifty = (request, response) => {
 
 const getActorfifty = (request, response) => {
 	server.then((conn) => {
-    conn.query('SELECT name, birthday FROM project.person WHERE CAST(birthday AS date) < CAST(\'12/31/1971\' AS date) AND name NOT IN (SELECT name FROM project.person NATURAL JOIN project.directs) ORDER BY CAST(birthday AS date)', (error, results) => {
+    conn.query('SELECT name, birthday FROM project.person WHERE CAST(birthday AS date) < CAST(\'12/31/1971\' AS date) AND name IN (SELECT name FROM project.starsIn NATURAL JOIN project.person) ORDER BY CAST(birthday AS date)', (error, results) => {
       if (error) {
         throw error;
       }
@@ -607,7 +739,7 @@ const getActorfifty = (request, response) => {
 
 const getDirectorsfifty = (request, response) => {
 	server.then((conn) => {
-    conn.query('SELECT name, birthday FROM project.person WHERE CAST(birthday AS date) < CAST(\'12/31/1971\' AS date) AND name NOT IN (SELECT name FROM project.person NATURAL JOIN project.starsIn) ORDER BY CAST(birthday AS date)', (error, results) => {
+    conn.query('SELECT name, birthday FROM project.person WHERE CAST(birthday AS date) < CAST(\'12/31/1971\' AS date) AND name IN (SELECT name FROM project.directs NATURAL JOIN project.person) ORDER BY CAST(birthday AS date)', (error, results) => {
       if (error) {
         throw error;
       }
@@ -619,6 +751,17 @@ const getDirectorsfifty = (request, response) => {
 const getproducctionCompanyfifty = (request, response) => {
 	server.then((conn) => {
     conn.query('', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getWritersfifty = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT name, birthday FROM project.person WHERE CAST(birthday AS date) < CAST(\'12/31/1971\' AS date) AND name IN (SELECT name FROM project.writes NATURAL JOIN project.person) ORDER BY CAST(birthday AS date)', (error, results) => {
       if (error) {
         throw error;
       }
@@ -672,6 +815,17 @@ const getproducctionCompanySJ = (request, response) => {
  });
 };
 
+const getWritersSJ = (request, response) => {
+	server.then((conn) => {
+    conn.query('SELECT DISTINCT name, birthday FROM project.person NATURAL JOIN project.writes WHERE movie_title IN (SELECT movie_title FROM project.movie NATURAL JOIN project.starsIn NATURAL JOIN project.person WHERE name = \'Samuel L. Jackson\')', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
 //RT Query
 const getMoviesRT = (request, response) => {
 	server.then((conn) => {
@@ -707,6 +861,17 @@ const getDirectorsRT = (request, response) => {
 };
 
 const getproducctionCompanyRT = (request, response) => {
+	server.then((conn) => {
+    conn.query('', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
+const getWritersRT = (request, response) => {
 	server.then((conn) => {
     conn.query('', (error, results) => {
       if (error) {
@@ -763,6 +928,17 @@ const getproducctionCompanyimdb = (request, response) => {
  });
 };
 
+const getWritersimdb = (request, response) => {
+	server.then((conn) => {
+    conn.query('', (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows);
+    });
+ });
+};
+
 // Export the database connection and CRUD functions
 module.exports = {
 	server,
@@ -771,98 +947,110 @@ module.exports = {
   getActor,
   getDirectors,
   getproducctionCompany,
+  getWriters,
 
   //SpiderMan
   getMoviesSpiderMan,
   getActorSpiderMan,
   getDirectorsSpiderMan,
   getproducctionCompanySpiderMan,
+  getWritersSpiderMan,
 
   //SpiderMan2
   getMoviesSpiderMan2,
   getActorSpiderMan2,
   getDirectorsSpiderMan2,
   getproducctionCompanySpiderMan2,
+  getWritersSpiderMan2,
 
   //SpiderMan3
   getMoviesSpiderMan3,
   getActorSpiderMan3,
   getDirectorsSpiderMan3,
   getproducctionCompanySpiderMan3,
+  getWritersSpiderMan3,
 
   //SpiderManTrilogy
   getMoviesSpiderManTrilogy,
   getActorSpiderManTrilogy,
   getDirectorsSpiderManTrilogy,
   getproducctionCompanySpiderManTrilogy,
+  getWritersSpiderManTrilogy,
 
   //Brothers
   getMoviesBrothers,
   getActorBrothers,
   getDirectorsBrothers,
   getproducctionCompanyBrothers,
+  getWritersBrothers,
 
   //Jumper
   getMoviesJumper,
   getActorJumper,
   getDirectorsJumper,
   getproducctionCompanyJumper,
+  getWritersJumper,
 
   //TheLighthouse
   getMoviesTheLighthouse,
   getActorTheLighthouse,
   getDirectorsTheLighthouse,
   getproducctionCompanyTheLighthouse,
+  getWritersTheLighthouse,
 
   //Stawars 1
   getMoviesI,
   getActorI,
   getDirectorsI,
   getproducctionCompanyI,
+  getWritersI,
 
   //Stawars 2
   getMoviesII,
   getActorII,
   getDirectorsII,
   getproducctionCompanyII,
+  getWritersII,
 
   //Stawars 3
   getMoviesIII,
   getActorIII,
   getDirectorsIII,
   getproducctionCompanyIII,
+  getWritersIII,
 
   //Stawars: Prequels
   getMoviesPrequels,
   getActorPrequels,
   getDirectorsPrequels,
   getproducctionCompanyPrequels,
+  getWritersPrequels,
 
   //Samuel L. Jackson Queries
   getMoviesSJ,
   getActorSJ,
   getDirectorsSJ,
   getproducctionCompanySJ,
+  getWritersSJ,
 
   //Fifty Queries
   getMoviesfifty,
   getActorfifty,
   getDirectorsfifty,
   getproducctionCompanyfifty,
+  getWritersfifty,
 
   //RT Queries
   getMoviesRT,
   getActorRT,
   getDirectorsRT,
   getproducctionCompanyRT,
+  getWritersRT,
 
   //imdb Queries
   getMoviesimdb,
   getActorimdb,
   getDirectorsimdb,
-  getproducctionCompanyimdb
-
-
-
-
+  getproducctionCompanyimdb,
+  getWritersimdb
 };

@@ -16,6 +16,10 @@ function loadProject() {
     .then(response => response.json())  // body is not quite ready yet
     .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
 
+    fetch("/project.writes")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"writers"));     // now the body is ready
+
 }
 
 //SpiderMan
@@ -35,6 +39,10 @@ function loadSpiderMan() {
     fetch("/project.productionCompany/SpiderMan")
     .then(response => response.json())  // body is not quite ready yet
     .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
+
+    fetch("/project.writes/SpiderMan")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"writers"));     // now the body is ready
 
 }
 
@@ -56,6 +64,12 @@ function loadSpiderMan2() {
     .then(response => response.json())  // body is not quite ready yet
     .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
 
+    fetch("/project.writes/SpiderMan2")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"writers"));     // now the body is ready
+
+
+
 }
 
 //SpiderMan3
@@ -75,6 +89,10 @@ function loadSpiderMan3() {
     fetch("/project.productionCompany/SpiderMan3")
     .then(response => response.json())  // body is not quite ready yet
     .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
+
+    fetch("/project.writes/SpiderMan3")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"writers"));     // now the body is ready
 
 }
 
@@ -96,6 +114,10 @@ function loadSpiderManTrilogy() {
     .then(response => response.json())  // body is not quite ready yet
     .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
 
+    fetch("/project.writes/SpiderManTrilogy")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"writers"));     // now the body is ready
+
 }
 
 //Brothers
@@ -115,6 +137,10 @@ function loadBrothers() {
     fetch("/project.productionCompany/Brothers")
     .then(response => response.json())  // body is not quite ready yet
     .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
+
+    fetch("/project.writes/Brothers")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"writers"));     // now the body is ready
 
 }
 
@@ -136,9 +162,13 @@ function loadJumper() {
     .then(response => response.json())  // body is not quite ready yet
     .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
 
+    fetch("/project.writes/Jumper")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"writers"));     // now the body is ready
+
 }
 
-//Jumper
+//Lighthouse
 function loadTheLighthouse() {
     fetch("/project.movie/TheLighthouse")
     .then(response => response.json())  // body is not quite ready yet
@@ -155,6 +185,10 @@ function loadTheLighthouse() {
     fetch("/project.productionCompany/TheLighthouse")
     .then(response => response.json())  // body is not quite ready yet
     .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
+
+    fetch("/project.writes/TheLighthouse")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"writers"));     // now the body is ready
 
 }
 
@@ -176,6 +210,10 @@ function loadI() {
     .then(response => response.json())  // body is not quite ready yet
     .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
 
+    fetch("/project.writes/I")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"writers"));     // now the body is ready
+
 }
 
 // Starwars 2
@@ -196,6 +234,10 @@ function loadII() {
     .then(response => response.json())  // body is not quite ready yet
     .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
 
+    fetch("/project.writes/II")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"writers"));     // now the body is ready
+
 }
 // Starwars 3
 function loadIII() {
@@ -214,6 +256,10 @@ function loadIII() {
     fetch("/project.productionCompany/III")
     .then(response => response.json())  // body is not quite ready yet
     .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
+
+    fetch("/project.writes/III")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"writers"));     // now the body is ready
 
 }
 
@@ -234,6 +280,10 @@ function loadPrequels() {
     .then(response => response.json())  // body is not quite ready yet
     .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
 
+    fetch("/project.writes/Prequels")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"writers"));     // now the body is ready
+
 }
 
 function loadSJ() {
@@ -252,6 +302,10 @@ function loadSJ() {
     fetch("/project.productionCompany/SJ")
     .then(response => response.json())  // body is not quite ready yet
     .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
+
+    fetch("/project.writes/SJ")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"writers"));     // now the body is ready
 
 }
 
@@ -272,6 +326,10 @@ function loadfifty() {
     .then(response => response.json())  // body is not quite ready yet
     .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
 
+    fetch("/project.writes/fifty")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"writers"));     // now the body is ready
+
 }
 
 function loadBestRT() {
@@ -291,6 +349,10 @@ function loadBestRT() {
     .then(response => response.json())  // body is not quite ready yet
     .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
 
+    fetch("/project.writes/RT")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"writers"));     // now the body is ready
+
 }
 
 function loadBestIMDB() {
@@ -309,6 +371,10 @@ function loadBestIMDB() {
     fetch("/project.productionCompany/IMDB")
     .then(response => response.json())  // body is not quite ready yet
     .then(data => displayClasses(data,"productionCompany"));     // now the body is ready
+
+    fetch("/project.writes/IMDB")
+    .then(response => response.json())  // body is not quite ready yet
+    .then(data => displayClasses(data,"writers"));     // now the body is ready
 
 }
 

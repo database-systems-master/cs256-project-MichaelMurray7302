@@ -49,3 +49,12 @@ CREATE TABLE project.produces(
   FOREIGN KEY (company_name) REFERENCES project.productionCompany,
   FOREIGN KEY (movie_title, release_date) REFERENCES project.movie (movie_title,release_date)
 );
+
+CREATE TABLE project.writes(
+  id CHAR(4),
+  movie_title VARCHAR(100),
+  release_date CHAR(10),
+  PRIMARY KEY (id, movie_title, release_date),
+  FOREIGN KEY (id) REFERENCES project.person,
+  FOREIGN KEY (movie_title, release_date) REFERENCES project.movie (movie_title,release_date)
+);

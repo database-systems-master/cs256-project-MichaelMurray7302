@@ -13,6 +13,10 @@ INSERT INTO project.person VALUES ('0004', '01/09/1955', 'J K Simmons');
 --Director
 INSERT INTO project.person VALUES ('0005', '10/23/1959', 'Sam Raimi');
 
+--Writer
+INSERT INTO project.person VALUES('0035', '06/09/1963', 'David Koepp');
+INSERT INTO project.writes VALUES('0035', 'Spider-Man', '05/03/2002');
+
 INSERT INTO project.starsIn VALUES('0000', 'Spider-Man', '05/03/2002');
 INSERT INTO project.starsIn VALUES('0001', 'Spider-Man', '05/03/2002');
 INSERT INTO project.starsIn VALUES('0002', 'Spider-Man', '05/03/2002');
@@ -38,6 +42,10 @@ INSERT INTO project.starsIn VALUES('0006', 'Spider-Man 2', '06/30/2004');
 
 INSERT INTO project.directs VALUES ('0005', 'Spider-Man 2', '06/30/2004');
 
+--Writer
+INSERT INTO project.person VALUES('0036', '05/12/1927', 'Alvin Sargent');
+INSERT INTO project.writes VALUES('0036', 'Spider-Man 2', '06/30/2004');
+
 INSERT INTO project.produces VALUES('Marvel Entertainment', 'Spider-Man 2', '06/30/2004');
 INSERT INTO project.produces VALUES('Columbia Pictures', 'Spider-Man 2', '06/30/2004');
 
@@ -59,6 +67,12 @@ INSERT INTO project.starsIn VALUES('0009', 'Spider-Man 3', '05/04/2007');
 
 INSERT INTO project.directs VALUES ('0005', 'Spider-Man 3', '05/04/2007');
 
+--Writer
+INSERT INTO project.writes VALUES('0005', 'Spider-Man 3', '05/04/2007');
+INSERT INTO project.person VALUES('0037', '06/21/1956', 'Ivan Raimi');
+INSERT INTO project.writes VALUES('0037', 'Spider-Man 3', '05/04/2007');
+INSERT INTO project.writes VALUES('0036', 'Spider-Man 3', '05/04/2007');
+
 INSERT INTO project.produces VALUES('Marvel Entertainment', 'Spider-Man 3', '05/04/2007');
 INSERT INTO project.produces VALUES('Columbia Pictures', 'Spider-Man 3', '05/04/2007');
 
@@ -72,6 +86,9 @@ INSERT INTO project.person VALUES('0010', '05/13/1986', 'Robert Pattinson');
 
 --Director
 INSERT INTO project.person VALUES('0011', '07/07/1983', 'Robert Eggers');
+
+--Writer
+INSERT INTO project.writes VALUES('0011', 'The Lighthouse', '10/18/2019');
 
 INSERT INTO project.starsIn VALUES('0002', 'The Lighthouse', '10/18/2019');
 INSERT INTO project.starsIn VALUES('0010', 'The Lighthouse', '10/18/2019');
@@ -94,6 +111,10 @@ INSERT INTO project.person VALUES('0015', '11/05/1943', 'Sam Shepard');
 
 --Director
 INSERT INTO project.person VALUES('0016', '02/06/1949', 'Jim Sheridan');
+
+--Writes
+INSERT INTO project.person VALUES('0038', '09/25/1970', 'David Benioff');
+INSERT INTO project.writes VALUES('0038', 'Brothers', '12/04/2009');
 
 INSERT INTO project.starsIn VALUES('0000', 'Brothers', '12/04/2009');
 INSERT INTO project.starsIn VALUES('0012', 'Brothers', '12/04/2009');
@@ -122,6 +143,9 @@ INSERT INTO project.person VALUES('0024', '08/23/1974', 'Ray Park');
 
 --Director
 INSERT INTO project.person VALUES('0025', '05/14/1944', 'George Lucas');
+
+--writer
+INSERT INTO project.writes VALUES('0025', 'Star Wars: Episode I - The Phantom Menace', '05/19/1999');
 
 INSERT INTO project.starsIn VALUES('0013','Star Wars: Episode I - The Phantom Menace', '05/19/1999');
 INSERT INTO project.starsIn VALUES('0017','Star Wars: Episode I - The Phantom Menace', '05/19/1999');
@@ -157,6 +181,11 @@ INSERT INTO project.starsIn VALUES('0028','Star Wars: Episode II - Attack of the
 
 INSERT INTO project.directs VALUES('0025','Star Wars: Episode II - Attack of the Clones', '05/16/2002');
 
+--writer
+INSERT INTO project.writes VALUES('0025', 'Star Wars: Episode II - Attack of the Clones', '05/16/2002');
+INSERT INTO project.person VALUES('0041', '05/10/1937', 'Jonothan Hales');
+INSERT INTO project.writes VALUES('0041', 'Star Wars: Episode II - Attack of the Clones', '05/16/2002');
+
 INSERT INTO project.produces VALUES('Lucasfilm Ltd. LLC', 'Star Wars: Episode II - Attack of the Clones', '05/16/2002');
 
 --Star Wars: Episode III - Revenge of the Sith
@@ -178,6 +207,7 @@ INSERT INTO project.starsIn VALUES('0029','Star Wars: Episode III - Revenge of t
 INSERT INTO project.starsIn VALUES('0030','Star Wars: Episode III - Revenge of the Sith', '05/19/2005');
 
 INSERT INTO project.directs VALUES('0025','Star Wars: Episode III - Revenge of the Sith', '05/19/2005');
+INSERT INTO project.writes VALUES('0025', 'Star Wars: Episode III - Revenge of the Sith', '05/19/2005');
 
 INSERT INTO project.produces VALUES('Lucasfilm Ltd. LLC', 'Star Wars: Episode III - Revenge of the Sith', '05/19/2005');
 
@@ -192,6 +222,12 @@ INSERT INTO project.person VALUES('0033', '04/09/1990', 'Kristen Stewart');
 
 --director
 INSERT INTO project.person VALUES('0034', '07/24/1965', 'Doug Liman');
+
+--writer
+INSERT INTO project.person VALUES('0039', '12/22/1965', 'David S. Goyer');
+INSERT INTO project.writes VALUES('0039', 'Jumper', '02/14/2008');
+INSERT INTO project.person VALUES('0040', '08/02/1973', 'Simon Kinberg');
+INSERT INTO project.writes VALUES('0040', 'Jumper', '02/14/2008');
 
 INSERT INTO project.starsIn VALUES('0023','Jumper', '02/14/2008');
 INSERT INTO project.starsIn VALUES('0026','Jumper', '02/14/2008');
@@ -208,7 +244,8 @@ INSERT INTO project.produces VALUES('New Regency Productions', 'Jumper', '02/14/
 
 --Plan on adding at somepoint
 --Pulp Fiction
---Grease
+--Django Unchained
+--The Hateful Eight
 --Star Wars: Episode IV - A New Hope
 --Star Wars: Episode V - The Empire Strikes Back
 --Star Wars: Episode VI - Return of the Jedi

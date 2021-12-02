@@ -59,7 +59,7 @@ app.get('/project.movie/SpiderMan3' ,db.getMoviesSpiderMan3);
 app.get('/project.starsIn/SpiderMan3' ,db.getActorSpiderMan3);
 app.get('/project.directs/SpiderMan3' ,db.getDirectorsSpiderMan3);
 app.get('/project.productionCompany/SpiderMan3' ,db.getproducctionCompanySpiderMan3);
-app.get('/project.writesSpiderMan3' ,db.getWritersSpiderMan3)
+app.get('/project.writes/SpiderMan3' ,db.getWritersSpiderMan3)
 
 //SpiderManTrilogy
 app.get('/project.movie/SpiderManTrilogy' ,db.getMoviesSpiderManTrilogy);
@@ -73,14 +73,14 @@ app.get('/project.movie/Brothers' ,db.getMoviesBrothers);
 app.get('/project.starsIn/Brothers' ,db.getActorBrothers);
 app.get('/project.directs/Brothers' ,db.getDirectorsBrothers);
 app.get('/project.productionCompany/Brothers' ,db.getproducctionCompanyBrothers);
-app.get('/project.writes//Brothers' ,db.getWritersBrothers)
+app.get('/project.writes/Brothers' ,db.getWritersBrothers)
 
 //Jumper
 app.get('/project.movie/Jumper' ,db.getMoviesJumper);
 app.get('/project.starsIn/Jumper' ,db.getActorJumper);
 app.get('/project.directs/Jumper' ,db.getDirectorsJumper);
 app.get('/project.productionCompany/Jumper' ,db.getproducctionCompanyJumper);
-app.get('/project.writes/Jumpers' ,db.getWritersJumper)
+app.get('/project.writes/Jumper' ,db.getWritersJumper)
 
 //TheLighthouse
 app.get('/project.movie/TheLighthouse' ,db.getMoviesTheLighthouse);
